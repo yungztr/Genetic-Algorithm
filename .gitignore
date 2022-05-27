@@ -1,0 +1,6 @@
+*.class
+abstand.txt
+/.settings
+.project
+.classpath
+.gitattributes
