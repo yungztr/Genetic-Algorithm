@@ -20,28 +20,87 @@ public class Main {
 		 * Ab hier bedarf wie man will
 		 */
 
-		ArrayList<Stadt> population1 = new ArrayList<>();
-		ArrayList<Stadt> population2 = new ArrayList<>();
-		ArrayList<Stadt> population3 = new ArrayList<>();
-		ArrayList<Stadt> population4 = new ArrayList<>();
-		ArrayList<Stadt> population5 = new ArrayList<>();
-		ArrayList<Stadt> population6 = new ArrayList<>();
-		ArrayList<Stadt> population7 = new ArrayList<>();
-		ArrayList<Stadt> population8 = new ArrayList<>();
-		ArrayList<Stadt> population9 = new ArrayList<>();
-		ArrayList<Stadt> population10 = new ArrayList<>();
-
-		ArrayList<ArrayList> allePopulationen = new ArrayList<>();
-		allePopulationen.add(population1);
-		allePopulationen.add(population2);
-		allePopulationen.add(population3);
-		allePopulationen.add(population4);
-		allePopulationen.add(population5);
-		allePopulationen.add(population6);
-		allePopulationen.add(population7);
-		allePopulationen.add(population8);
-		allePopulationen.add(population9);
-		allePopulationen.add(population10);
+		ArrayList<Stadt> population = new ArrayList<>();
+		population.addAll(originalTour);
+		ArrayList<Population> allePopulationen = new ArrayList<>();
+		Comparator<Population> laengenComparator = Population.sortiereDurchLaenge();
+		
+		Population p1 = new Population(population);
+		Population p2 = new Population(population);
+		Population p3 = new Population(population);
+		Population p4 = new Population(population);
+		Population p5 = new Population(population);
+		Population p6 = new Population(population);
+		Population p7 = new Population(population);
+		Population p8 = new Population(population);
+		Population p9 = new Population(population);
+		Population p10 = new Population(population);
+		Population p11 = new Population(population);
+		Population p12 = new Population(population);
+		Population p13 = new Population(population);
+		Population p14 = new Population(population);
+		Population p15 = new Population(population);
+		Population p16 = new Population(population);
+		Population p17 = new Population(population);
+		Population p18 = new Population(population);
+		Population p19 = new Population(population);
+		Population p20 = new Population(population);
+		Population p21 = new Population(population);
+		Population p22 = new Population(population);
+		Population p23 = new Population(population);
+		Population p24 = new Population(population);
+		Population p25 = new Population(population);
+		Population p26 = new Population(population);
+		Population p27 = new Population(population);
+		Population p28 = new Population(population);
+		Population p29 = new Population(population);
+		Population p30 = new Population(population);
+		Population p31 = new Population(population);
+		Population p32 = new Population(population);
+		
+		allePopulationen.add(p1);
+		allePopulationen.add(p2);
+		allePopulationen.add(p3);
+		allePopulationen.add(p4);
+		allePopulationen.add(p5);
+		allePopulationen.add(p6);
+		allePopulationen.add(p7);
+		allePopulationen.add(p8);
+		allePopulationen.add(p9);
+		allePopulationen.add(p10);
+		allePopulationen.add(p11);
+		allePopulationen.add(p12);
+		allePopulationen.add(p13);
+		allePopulationen.add(p14);
+		allePopulationen.add(p15);
+		allePopulationen.add(p16);
+		allePopulationen.add(p17);
+		allePopulationen.add(p18);
+		allePopulationen.add(p19);
+		allePopulationen.add(p20);
+		allePopulationen.add(p21);
+		allePopulationen.add(p22);
+		allePopulationen.add(p23);
+		allePopulationen.add(p24);
+		allePopulationen.add(p25);
+		allePopulationen.add(p26);
+		allePopulationen.add(p27);
+		allePopulationen.add(p28);
+		allePopulationen.add(p29);
+		allePopulationen.add(p30);
+		allePopulationen.add(p31);
+		allePopulationen.add(p32);
+		
+		
+		for (Population p : allePopulationen) {
+			Collections.shuffle(p.getTour());
+			p.setTourLaenge(berechneTourLaengeDurchAuslesen(alleAbstaende, p.getTour()));
+		}
+		
+		Collections.sort(allePopulationen, laengenComparator);
+		
+		//Genetischer Algirithmus kommt dann hier!
+		
 	}
 
 	private static double[][] einlesenAbstandtabelleInMatrixSpeichern(double[][] abstandArray)
